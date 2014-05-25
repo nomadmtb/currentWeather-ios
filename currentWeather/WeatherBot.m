@@ -29,10 +29,28 @@
     
     // Parse the JSON data into an array.
     NSError* parseError = nil;
-    NSArray* encodedData = [NSJSONSerialization JSONObjectWithData:response
+    NSDictionary* encodedData = [NSJSONSerialization JSONObjectWithData:response
         options:0 error:&parseError];
     
     NSLog(@"%@", encodedData);
+    
+    // Pulling main key out of response.
+    NSDictionary* results = encodedData [@"main"];
+    
+    // Set the properties from the data in the array.
+    if (!_weatherTemp) {
+        _weatherTemp = [[NSString alloc] init];
+    }
+    
+    if (!_weatherHumidity) {
+        _weatherHumidity = [[NSString alloc] init];
+    }
+    
+    _weatherTemp = [NSString stringWithFormat: @"%@°F", results [@"temp"]];
+    _weatherHumidity = [NSString stringWithFormat:@"%@%%", results [@"humidity"]];
+    
+    NSLog(@"%@", _weatherHumidity);
+    NSLog(@"%@", _weatherTemp);
 }
 
 @end

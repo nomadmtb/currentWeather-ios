@@ -11,8 +11,6 @@
 
 @interface WeatherBot : NSObject
 
-@property (strong, nonatomic) NSString* weatherDescription;
-@property (strong, nonatomic) NSString* weatherIcon;
 @property (strong, nonatomic) NSString* weatherTemp;
 @property (strong, nonatomic) NSString* weatherHumidity;
 

@@ -47,6 +47,12 @@
     }
     
     [_weather getWeather:_locator];
+    
+    _printHumidity.text = @"";
+    _printTemp.text = @"";
+    
+    _printTemp.text = _weather.weatherTemp;
+    _printHumidity.text = _weather.weatherHumidity;
 }
 
 @end

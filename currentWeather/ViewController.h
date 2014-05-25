@@ -17,5 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *printLocation;
 @property (strong, nonatomic) LocateBot* locator;
 @property (strong, nonatomic) WeatherBot* weather;
+@property (weak, nonatomic) IBOutlet UILabel *printTemp;
+@property (weak, nonatomic) IBOutlet UILabel *printHumidity;
 
 @end
