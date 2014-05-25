@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LocateBot.h"
+#import "WeatherBot.h"
 
 @interface ViewController : UIViewController
 
@@ -15,5 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *printLocation;
 @property (strong, nonatomic) LocateBot* locator;
+@property (strong, nonatomic) WeatherBot* weather;
 
 @end

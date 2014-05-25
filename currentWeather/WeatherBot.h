@@ -7,8 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LocateBot.h"
 
 @interface WeatherBot : NSObject
 
+@property (strong, nonatomic) NSString* weatherDescription;
+@property (strong, nonatomic) NSString* weatherIcon;
+@property (strong, nonatomic) NSString* weatherTemp;
+@property (strong, nonatomic) NSString* weatherHumidity;
+
+-(void) getWeather:(LocateBot*)myLocation;
 
 @end

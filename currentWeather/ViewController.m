@@ -38,6 +38,15 @@
     _printLocation.text = [NSString stringWithFormat:@"%f, %f",
                            _locator.currentLocation.coordinate.latitude,
                            _locator.currentLocation.coordinate.longitude];
+    
+    // Now we can get the weather from the weatherBot.
+    
+    // Lazy allocate.
+    if (!_weather) {
+        _weather = [[WeatherBot alloc] init];
+    }
+    
+    [_weather getWeather:_locator];
 }
 
 @end
