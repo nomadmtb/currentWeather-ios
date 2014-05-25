@@ -13,7 +13,7 @@
 
 - (IBAction)getWeather:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UITextField *printLocation;
+@property (weak, nonatomic) IBOutlet UILabel *printLocation;
 @property (strong, nonatomic) LocateBot* locator;
 
 @end

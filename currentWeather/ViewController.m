@@ -28,12 +28,24 @@
 
 - (IBAction)getWeather:(id)sender {
     
+    // Allocate the location bot if not already done so.
+    
     if (!_locator) {
         _locator = [[LocateBot alloc] init];
     }
     
-    NSLog(@"Locator: %@", _locator);
+    NSLog(@"Locator obj -> %@", _locator);
     
+    // Send locateMe message to location class.
     [_locator locateMe];
+    
+    // Clear location text.
+    _printLocation.text = @"";
+
+    // Update location text-field with new coords from bot.
+    _printLocation.text = [NSString stringWithFormat:@"%f, %f",
+                           _locator.currentLocation.coordinate.latitude,
+                           _locator.currentLocation.coordinate.longitude];
 }
+
 @end
